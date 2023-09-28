@@ -1,4 +1,5 @@
 from ting_file_management.file_management import txt_importer
+import sys
 
 
 def process(path_file, instance):
@@ -9,7 +10,7 @@ def process(path_file, instance):
         if i['nome_do_arquivo'] == path_file:
             return None
     instance.enqueue(dict_file)
-    return print(instance.queue)
+    sys.stdout.write(f'{instance.queue}')
 
 
 def remove(instance):
